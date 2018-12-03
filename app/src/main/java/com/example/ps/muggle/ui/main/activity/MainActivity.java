@@ -1,7 +1,6 @@
 package com.example.ps.muggle.ui.main.activity;
 
 import android.view.View;
-import android.widget.TextView;
 
 import com.example.ps.muggle.R;
 import com.example.ps.muggle.base.BaseActivity;
@@ -10,13 +9,7 @@ import com.example.ps.muggle.model.bean.RootBean;
 import com.example.ps.muggle.presenter.main.MainPresenter;
 import com.example.ps.muggle.utils.ToastUtil;
 
-import butterknife.BindView;
-
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View, View.OnClickListener {
-    @BindView(R.id.click)
-    TextView textView;
-    @BindView(R.id.click1)
-    TextView textView1;
 
     @Override
     protected void initInject() {
@@ -70,19 +63,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initEventAndData() {
-        textView.setOnClickListener(this);
-        textView1.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.click:
-                mPresenter.getVideoInfo();
-                break;
-            case R.id.click1:
-                mPresenter.checkVersion();
-                break;
         }
     }
 }
